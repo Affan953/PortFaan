@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -15,8 +15,43 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <link rel="stylesheet" href="css/style.css">
+    <!-- GSAP for premium animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Vanilla Tilt for 3D Card Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 </head>
 <body>
+    <!-- Premium Loading Screen -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-svg-container">
+                <svg id="loader-svg" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet">
+                    <!-- Connected "hello" energy flow path (Centered lowercase cursive line) -->
+                    <path id="energy-flow" d="M150,60 L150,150 M150,110 C150,90 190,90 190,110 L190,150 C190,150 200,150 210,150 C230,150 240,110 220,110 C200,110 205,150 230,150 C260,150 270,60 250,60 C230,60 245,150 270,150 C300,150 310,60 290,60 C270,60 285,150 310,150 C350,150 360,110 340,110 C320,110 325,150 350,150" 
+                        fill="none" stroke="url(#loader-gradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                    
+                    <!-- Flowing Glow Trail (Centered lowercase path) -->
+                    <path id="glow-trail" d="M150,60 L150,150 M150,110 C150,90 190,90 190,110 L190,150 C190,150 200,150 210,150 C230,150 240,110 220,110 C200,110 205,150 230,150 C260,150 270,60 250,60 C230,60 245,150 270,150 C300,150 310,60 290,60 C270,60 285,150 310,150 C350,150 360,110 340,110 C320,110 325,150 350,150" 
+                        fill="none" stroke="rgba(37, 99, 235, 0.8)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <defs>
+                        <linearGradient id="loader-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:var(--accent-1);stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:var(--accent-3);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:var(--accent-1);stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="loader-glow">
+                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <div class="loader-particles" id="loader-particles"></div>
+    </div>
+
 
     <!-- Background Orbs -->
     <div class="glow-bg">
@@ -25,7 +60,7 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar hidden-on-load" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">Affan<span>.</span></a>
             
@@ -53,7 +88,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-container">
-            <div class="hero-content reveal active">
+            <div class="hero-content reveal">
                 <span class="hero-subtitle">Hello, World!</span>
                 <h1 class="hero-title">Sung <br><span class="text-gradient">Jin-Woo</span></h1>
                 
@@ -71,7 +106,7 @@
                 </div>
             </div>
             
-            <div class="hero-visual reveal active delay-1">
+            <div class="hero-visual reveal">
                 <div class="hero-photo-container">
                     <div class="photo-glow"></div>
                     <!-- Place your photo URL in the src below -->
@@ -339,7 +374,7 @@
             
             <div class="social-links">
                 <a href="#" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-                <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.instagram.com/affabdtsaa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
                 <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
                 <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
             </div>
@@ -350,4 +385,3 @@
         <script src="js/script.js"></script>
 </body>
 </html>
-

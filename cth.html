@@ -1,0 +1,80 @@
+    <section id="tech-flow" class="tech-flow-section">
+        <div class="container">
+            <h2 class="section-title reveal">Neural Tech Stack</h2>
+            
+            <div class="tech-flow-container reveal delay-1">
+                <!-- Background Particles for this section -->
+                <div class="section-particles" id="tech-particles"></div>
+                <div class="section-glow-orb" id="tech-glow-orb"></div>
+                
+                <!-- SVG Canvas for Data Flow -->
+                <svg class="flow-svg" id="flow-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <filter id="glow-filter" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        
+                        <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="var(--accent-1)" stop-opacity="0" />
+                            <stop offset="50%" stop-color="var(--accent-3)" stop-opacity="1" />
+                            <stop offset="100%" stop-color="var(--accent-1)" stop-opacity="0" />
+                        </linearGradient>
+
+                        <mask id="card-mask">
+                            <rect width="1000" height="600" fill="white" />
+                            <!-- Holes will be added here via JS or hardcoded -->
+                            <g id="mask-holes"></g>
+                        </mask>
+                    </defs>
+                    
+                    <!-- Paths will be injected via JS or hardcoded -->
+                    <g id="flow-paths-group" mask="url(#card-mask)"></g>
+                </svg>
+
+                <!-- Central Chip -->
+                <div class="tech-core-wrapper">
+                    <div class="tech-core" id="tech-core">
+                        <div class="core-inner">
+                            <i class='bx bx-chip'></i>
+                            <span>POWERED BY</span>
+                        </div>
+                        <div class="core-glow"></div>
+                        <div class="core-rings">
+                            <div class="ring"></div>
+                            <div class="ring"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Cards (Positioned Absolutely relative to container) -->
+                <div class="tech-cards-container">
+                    <div class="tech-node-card" data-tech="react" style="top: 10%; left: 15%;">
+                        <div class="node-icon"><i class='bx bxl-react'></i></div>
+                        <div class="node-label">React.js</div>
+                    </div>
+                    <div class="tech-node-card" data-tech="nodejs" style="top: 10%; right: 15%;">
+                        <div class="node-icon"><i class='bx bxl-nodejs'></i></div>
+                        <div class="node-label">Node.js</div>
+                    </div>
+                    <div class="tech-node-card" data-tech="tailwind" style="top: 45%; left: 2%;">
+                        <div class="node-icon"><i class='bx bxl-tailwind-css'></i></div>
+                        <div class="node-label">Tailwind</div>
+                    </div>
+                    <div class="tech-node-card" data-tech="javascript" style="top: 45%; right: 2%;">
+                        <div class="node-icon"><i class='bx bxl-javascript'></i></div>
+                        <div class="node-label">JavaScript</div>
+                    </div>
+                    <div class="tech-node-card" data-tech="figma" style="bottom: 2%; left: 12%;">
+                        <div class="node-icon"><i class='bx bxl-figma'></i></div>
+                        <div class="node-label">Figma</div>
+                    </div>
+                    <div class="tech-node-card" data-tech="mongodb" style="bottom: 2%; right: 12%;">
+                        <div class="node-icon"><i class='bx bxl-mongodb'></i></div>
+                        <div class="node-label">MongoDB</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
